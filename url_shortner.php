@@ -13,6 +13,12 @@
   <button type="submit" class="btn btn-primary">Shorten URL</button>
 </form>
     <?php
+
+    class TableRows extends RecursiveIteratorIterator {
+        function __construct($it) {
+            parent::__construct($it, self::LEAVES_ONLY);
+        }
+    }
     $server_name = "localhost";
     $user_name= "urlreader";
     $password="reader@123";
@@ -30,7 +36,22 @@
     {
         echo $sql . "<br>". $e->getMessage();
     }
+    // function getAllUrls(){
+        try { 
+            $conn= new PDO("mysql:host=$server_name;dbname=$dbname",$user_name,$password);
+            $conn->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
+            $sql = $conn->prepare("SELECT url,shortend_url from all_url");
+            $sql->execute();
     
+            $allUrls=$sql->setFetchMode(PDO::FETCH_ASSOC);
+            foreach(new TableRows(new RecursiveArrayIterator($sql->fetchAll()))as $k=>$v){
+                echo $v;
+            }
+        } 
+        catch(PDOException $e){echo "Error:".$e->getMessage();}
+       
+    
+    // }
     ?>  
     </p>  
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
