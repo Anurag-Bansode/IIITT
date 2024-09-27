@@ -19,11 +19,10 @@
             parent::__construct($it, self::LEAVES_ONLY);
         }
     }
-    $server_name = "localhost";
-    $user_name= "urlreader";
-    $password="reader@123";
-    $dbname="urlShortner";
-
+    $server_name =getenv('DB_HOST');
+    $user_name= getenv('DB_USER');
+    $password=getenv('DB_PASS');
+    $dbname=getenv('DB_NAME');
     try
     {
         function insertUrl()
@@ -42,6 +41,7 @@
         echo $sql . "<br>". $e->getMessage();
     }
     // function getAllUrls(){
+        
         try { 
             $conn= new PDO("mysql:host=$server_name;dbname=$dbname",$user_name,$password);
             $conn->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
