@@ -15,7 +15,7 @@
                 </a>
             </td>
             <td>
-            <a href="<?php echo htmlspecialchars($url['shortend_url']); ?>" target="_blank">
+            <a href="r.php?c=<?php echo htmlspecialchars($url['shortend_url']); ?>" target="_blank">
                <?php echo htmlspecialchars($url['shortend_url']); ?>
                 </a>
             </td>

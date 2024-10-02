@@ -21,6 +21,13 @@ class UrlModel {
         return $sql->fetchAll(PDO::FETCH_ASSOC);
     }
 
+    public function getSingleUrl($shortUrl) {
+        $sql = $this->conn->prepare("SELECT url FROM all_url WHERE shortend_url =:shortend_url");
+        $sql->bindParam(':shortend_url', $shortUrl);
+        $sql->execute();
+        return $sql->fetchAll(PDO::FETCH_ASSOC);
+    }
+
     public function __destruct() {
         $this->conn = null;
     }

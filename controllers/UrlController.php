@@ -11,6 +11,9 @@ class UrlController {
     public function insertUrl($url, $shortUrl) {
         $this->model->insertUrl($url, $shortUrl);
     }
+    public function getRedirectionUrl($shortUrl) {
+        return $this->model->getSingleUrl($shortUrl);
+    }
 
     public function getAllUrls() {
         return $this->model->getAllUrls();

@@ -5,6 +5,9 @@
     <title>Shorten URL</title>
 </head>
 <body>
+    <header>
+        <h1>Shorten Your URL</h1>
+    </header>
     <div class="container mt-5">
         <form method="POST" action="index.php?action=submit">
             <div class="form-group">
