@@ -1,12 +1,18 @@
 <?php
 require_once '../vendor/autoload.php'; // Load dependencies
 require_once '../controllers/UrlController.php';
+use Dotenv\Dotenv;
+
+$dotenv = Dotenv::createImmutable(__DIR__.'/../');
+$dotenv->load();
 
 // Get DB credentials
-$dbHost = getenv('DB_HOST');
-$dbUser = getenv('DB_USER');
-$dbPass = getenv('DB_PASS');
-$dbName = getenv('DB_NAME');
+$temp=
+
+$dbHost = $_ENV['DB_HOST'];
+$dbUser = $_ENV['DB_USER'];
+$dbPass = $_ENV['DB_PASS'];
+$dbName = $_ENV['DB_NAME'];
 
 
 
