@@ -43,6 +43,7 @@
     // function getAllUrls(){
         
         try { 
+
             $conn= new PDO("mysql:host=$server_name;dbname=$dbname",$user_name,$password);
             $conn->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
             $sql = $conn->prepare("SELECT url,shortend_url from all_url");

@@ -1,0 +1,6 @@
+class urlModel
+{
+    private $conn;
+
+    
+}
