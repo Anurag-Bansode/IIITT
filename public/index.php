@@ -24,7 +24,7 @@ $action = $_GET['action'] ?? null;
 
 if ($action === 'submit' && !empty($_POST['urlinput'])) {
     $url = $_POST['urlinput'];
-    $shortUrl = "short.ly/" . uniqid(); // Simple shortening logic
+    $shortUrl = "localhost". uniqid(); // Simple shortening logic
     $controller->insertUrl($url, $shortUrl);
 }
 
