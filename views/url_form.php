@@ -1,21 +1,31 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link type="text/css" rel="stylesheet" href="urlform.css">
     <title>Shorten URL</title>
 </head>
+
 <body>
     <header>
-        <h1>Shorten Your URL</h1>
+        <h1 class="header">Shorten Your link</h1>
     </header>
     <div class="container mt-5">
         <form method="POST" action="index.php?action=submit">
             <div class="form-group">
-                <label for="urlinput">Enter URL</label>
-                <input type="text" class="form-control" id="urlinput" name="urlinput" placeholder="Enter URL" required>
+
+                <div class="search-bar">
+                    <input type="text" class="form-control" style="border-radius:4rem;" id="urlinput"
+                        name="urlinput" placeholder="Enter URL" required>
+                </div>
+
+                <div class="shorten-btn">
+                    <button type="submit" class="btn btn-primary" style="max-height: 40px;min-width: 115px;">Shorten URL</button>
+                </div>
             </div>
-            <button type="submit" class="btn btn-primary mt-2">Shorten URL</button>
         </form>
     </div>
 </body>
+
 </html>

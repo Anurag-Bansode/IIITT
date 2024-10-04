@@ -1,5 +1,5 @@
 
-<table class="table mt-5">
+<table class="table mt-5 table-dark">
     <thead>
         <tr>
             <th>Original URL</th>
